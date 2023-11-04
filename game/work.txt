@@ -1,0 +1,5 @@
+TODO:
+- move function (move based on input)
+- figure our output for the bot after each move
+
+fix:
