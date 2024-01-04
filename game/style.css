@@ -12,6 +12,8 @@ svg {
     margin: auto;
 }
 
+image {transition: all 0.3s ease;}
+
 section {
     width: 255px;
     background-color: #505050;

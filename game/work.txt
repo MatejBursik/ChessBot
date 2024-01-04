@@ -1,5 +1,18 @@
 TODO:
-- move function (move based on input)
-- figure our output for the bot after each move
+- bot (essentialy a chess puzzle solver based on a inputted file)
+    -? file : json,txt,csv,xml
+
+- figure how it is going to function
+    - containerise (bot1, bot2, API, webserver, database)
+    - manually input the bots' moves and download the file from the website
+
+test:
+    - if there are file or rank indicators (default)
+    - if there are both file and rank indicators (default)
+    - if there is only one, file or rank indicators (default)
+    - if there are file or rank indicators (pawn)
+    - if there are both file and rank indicators (pawn)
+    - if there is only one, file or rank indicators (pawn)
+    - en passant (pawn)
 
 fix:

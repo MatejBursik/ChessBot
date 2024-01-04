@@ -10,7 +10,7 @@ let svgInnerHTMl = svg.innerHTML;
 
 function isOdd(n) { return n & 1;};
 let color = "white";
-//if(isOdd(y)){}
+let abc = "abcdefgh"
 
 for(let y=0; y<height; y++){
     for(let x=0; x<width; x++){
@@ -29,7 +29,7 @@ for(let y=0; y<height; y++){
         };
         svgInnerHTMl += '<rect x="' + (x*scale) + 
                                 '" y="' + (y*scale) + 
-                                '" id="' + y + '-' + x + 
+                                '" id="' + abc[x] + (height-y) + 
                                 '" width="' + scale + 
                                 '" height="' + scale + 
                                 '" style="fill:' + color + '" />'
@@ -39,29 +39,25 @@ for(let y=0; y<height; y++){
 // putting pieces onto the board
 let id;
 let board = [
-    ["rd","knd","bd","qd","kd","bd","knd","rd"],
+    ["rd","nd","bd","qd","kd","bd","nd","rd"],
     ["pd","pd","pd","pd","pd","pd","pd","pd"],
     ["","","","","","","",""],
     ["","","","","","","",""],
     ["","","","","","","",""],
     ["","","","","","","",""],
     ["pl","pl","pl","pl","pl","pl","pl","pl"],
-    ["rl","knl","bl","ql","kl","bl","knl","rl"]
+    ["rl","nl","bl","ql","kl","bl","nl","rl"]
 ];
 
 for(let y=0; y<height; y++){
     for(let x=0; x<width; x++){
         if(board[y][x] !== ""){
-            id = board[y][x];
-            if(board[y][x] === "pl" || board[y][x] === "pd"){
-                id = (x+1) + board[y][x];
-            } else {id = board[y][x];};
             svgInnerHTMl += '<image href="assets/' + board[y][x] + '.svg'
                                       + '" x="' + (x*scale)
                                       + '" y="' + (y*scale)
                                       + '" height="' + (scale)
                                       + '" width="' + (scale) 
-                                      + '" id="' + id + '" />';
+                                      + '" class="' + board[y][x] + '" />';
         };
     };
 };
@@ -97,9 +93,7 @@ function addToHistory(w_m,b_m) {
     if(b_m[b_m.length-1] === " "){b_m.pop();};
 };
 
-function move() {}
-
-// play the input
+// play input
 const white = document.getElementById('enter_W');
 const black = document.getElementById('enter_B');
 const w_input = document.getElementById('white');
@@ -115,11 +109,9 @@ white.addEventListener('click', function (e) {
         w_moves.push(value);
 
         console.log(value); //debug
-        move();
-
+        identifyChessNotation(value,"white",scale);
         addToHistory(w_moves,b_moves);
-        console.log(w_moves); //debug
-        console.log(b_moves); //debug
+        
         w_input.value = ""
         next.innerText = "Black";
     };
@@ -132,11 +124,9 @@ black.addEventListener('click', function (e) {
         b_moves.push(value);
 
         console.log(value); //debug
-        move();
-
+        identifyChessNotation(value,"black",scale);
         addToHistory(w_moves,b_moves);
-        console.log(w_moves); //debug
-        console.log(b_moves); //debug
+
         b_input.value = ""
         next.innerText = "White";
     };
