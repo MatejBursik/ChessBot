@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/favicon.svg">
     <link rel="stylesheet" href="style.css">
+    <script src="getBoard.js"></script>
+    <script src="canMoveThere.js"></script>
     <script src="chessNotation.js"></script>
     <title>Chess</title>
 </head>
 <body>
     <div style="display: flex; padding-top: 25px;">
-        <svg id="svg" width="1" height="1">
+        <svg style="margin: auto;" id="svg" width="1" height="1">
         </svg>
     </div>
 
@@ -28,6 +30,8 @@
         <div id="enter_B"><p>Enter&nbspmove</p></div>
         <br>
         <p style="text-align: center;">Next move: <span id="next">White</span></p>
+        <br>
+        <div id="print"><p>Print the&nbspboard</p></div>
         <br>
         <p style="text-align: center;">
             For move input use <a href="https://www.youtube.com/watch?v=b6PR885Rgb8" target="_blank">chess notation</a>.

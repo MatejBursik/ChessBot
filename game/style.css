@@ -8,10 +8,6 @@ body {
     background-color: #808080;
 }
 
-svg {
-    margin: auto;
-}
-
 image {transition: all 0.3s ease;}
 
 section {
@@ -24,7 +20,8 @@ section {
 }
 
 #enter_W,
-#enter_B {
+#enter_B,
+#print {
     width: 60%;
     background-color: red;
     border: 2px solid white;
@@ -34,7 +31,8 @@ section {
 }
 
 #enter_W p,
-#enter_B p {
+#enter_B p,
+#print p {
     color: white;
     text-align: center;
     padding: 10px;

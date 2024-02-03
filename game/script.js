@@ -37,8 +37,7 @@ for(let y=0; y<height; y++){
 };
 
 // putting pieces onto the board
-let id;
-let board = [
+let startboard = [
     ["rd","nd","bd","qd","kd","bd","nd","rd"],
     ["pd","pd","pd","pd","pd","pd","pd","pd"],
     ["","","","","","","",""],
@@ -51,13 +50,13 @@ let board = [
 
 for(let y=0; y<height; y++){
     for(let x=0; x<width; x++){
-        if(board[y][x] !== ""){
-            svgInnerHTMl += '<image href="assets/' + board[y][x] + '.svg'
+        if(startboard[y][x] !== ""){
+            svgInnerHTMl += '<image href="assets/' + startboard[y][x] + '.svg'
                                       + '" x="' + (x*scale)
                                       + '" y="' + (y*scale)
                                       + '" height="' + (scale)
                                       + '" width="' + (scale) 
-                                      + '" class="' + board[y][x] + '" />';
+                                      + '" class="' + startboard[y][x] + '" />';
         };
     };
 };
@@ -101,33 +100,41 @@ const b_input = document.getElementById('black');
 let w_moves = [];
 let b_moves = [];
 let value = "";
+let run = true;
 
 white.addEventListener('click', function (e) {
     if(next.innerText === "White"){
         value = w_input.value;
-        if(!value){value = "";};
-        w_moves.push(value);
-
-        console.log(value); //debug
-        identifyChessNotation(value,"white",scale);
-        addToHistory(w_moves,b_moves);
-        
-        w_input.value = ""
-        next.innerText = "Black";
+        run = identifyChessNotation(value,"white",scale);
+        if(run){
+            w_moves.push(value);
+            console.log(value); //debug
+            addToHistory(w_moves,b_moves);
+            
+            w_input.value = ""
+            next.innerText = "Black";
+        }
     };
 });
 
 black.addEventListener('click', function (e) {
     if(next.innerText === "Black"){
         value = b_input.value;
-        if(!value){value = "";};
-        b_moves.push(value);
-
-        console.log(value); //debug
-        identifyChessNotation(value,"black",scale);
-        addToHistory(w_moves,b_moves);
-
-        b_input.value = ""
-        next.innerText = "White";
+        run = identifyChessNotation(value,"black",scale);
+        if(run){
+            b_moves.push(value);
+            console.log(value); //debug
+            addToHistory(w_moves,b_moves);
+            
+            b_input.value = ""
+            next.innerText = "White";
+        }
     };
+});
+
+// print button
+const printBourd = document.getElementById('print');
+
+printBourd.addEventListener('click', function (e) {
+    console.log(JSON.stringify(getBoard(scale)));
 });
