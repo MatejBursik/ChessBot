@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/assets/favicon.svg">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>ChessBot</title>
+</head>
+<body>
+    <h1>Chess Bot Dashboard</h1>
+
+    <section>
+        <h2>Play against the Bot</h2>
+        <form action="{{ url_for('play') }}" method="post">
+            <label for="userOption">Player Option</label>
+            <select name="userOption" id="userOption">
+                <option value="spectator">Spectator</option>
+                <option value="white">White</option>
+                <option value="black">Black</option>
+            </select>
+            <button type="submit">Play</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Train the Bot</h2>
+        <a href="/train">
+            <button>Train</button>
+        </a>
+    </section>
+
+    <p><a href="https://github.com/MatejBursik/ChessBot" target="_blank">Github repository of this project</a></p>
+
+    <a href="/" id="home"><i class="fa-solid fa-house"></i></a>
+</body>
+</html>

@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #808080;
+}
+
+section {
+    width: 255px;
+    background-color: #505050;
+    border-radius: 10px;
+    padding: 15px;
+    margin: auto;
+    margin-top: 25px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin: auto;
+}
+
+section a {
+    text-decoration: none;
+}
+
+input,
+label,
+select,
+h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+label,
+input,
+select {
+    display: block;
+    width: 100%;
+}
+
+#home {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    background-color: #505050;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+#home:hover {
+    background-color: #444444;
+    color: #e0e0e0;
+}

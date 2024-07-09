@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/assets/favicon.svg">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/play.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="/static/js/getBoard.js"></script>
+    <script src="/static/js/makeBoard.js"></script>
+    <script src="/static/js/getBotMove.js"></script>
+    <script src="/static/js/updatePlayerMove.js"></script>
+    <title>Play</title>
+</head>
+<script>
+    var userOption = '{{ userOption }}';
+</script>
+<body>
+    <div style="display: flex; padding-top: 25px;">
+        <svg style="margin: auto;" id="svg" width="1" height="1">
+        </svg>
+    </div>
+
+    <section id="moveSect">
+        <h2>User: {{ userOption.capitalize() }}</h2>
+        
+        <label for="userMove">Your next move</label>
+        <input type="text" id="userMove" maxlength="10" name="userMove" placeholder="Move input" required autofocus>
+        <button id="userMoveEnter">Enter&nbspyour&nbspmove</button>
+
+        <p>
+            For move input use <a href="https://www.youtube.com/watch?v=b6PR885Rgb8" target="_blank">chess notation</a>.
+        </p>
+    </section>
+
+    <section>
+        <table id="history">
+            <tr>
+                <th>Turn</th>
+                <th>White</th>
+                <th>Black</th>
+            </tr>
+        </table>
+    </section>
+
+    <a href="/" id="home"><i class="fa-solid fa-house"></i></a>
+
+    <script src="/static/js/play.js"></script>
+</body>
+</html>
+
