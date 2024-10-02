@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from chess_solver.functions import *
+from chess_solver.data.functions import *
 from chess_solver.play import *
 import chess
 

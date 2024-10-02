@@ -1,6 +1,6 @@
 import numpy, chess
-#from functions import * # for test.py
-from chess_solver.functions import *
+#from data.functions import * # for test.py
+from chess_solver.data.functions import *
 from tensorflow.keras.models import load_model
 
 def minimax_eval(board):
